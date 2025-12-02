@@ -61,7 +61,6 @@ class Personagem_Id : AppCompatActivity() {
                     api.getPersonagemById(PersonagemId)
                 }
 
-                // Esconder ProgressBar
                 progressBar.visibility = ProgressBar.GONE
 
                 if (response.isNotEmpty()) {
@@ -73,7 +72,7 @@ class Personagem_Id : AppCompatActivity() {
 
             } catch (e: Exception) {
                 progressBar.visibility = ProgressBar.GONE
-                tvResult.text = "Erro ao buscar personagem: ${e.message}"
+                tvResult.text = "Erro ao buscar personagem."
             }
         }
     }
