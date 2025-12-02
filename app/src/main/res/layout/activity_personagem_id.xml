@@ -1,0 +1,52 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar Personagem por ID"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:paddingTop="30dp"
+        android:paddingBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ex: 9e3f7ce4-b9a7-4244-b709-dae5c1f1d4a8" />
+
+    <EditText
+        android:id="@+id/etPersonagemId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite o ID do personagem"
+        android:inputType="text"
+        android:paddingTop="30dp"/>
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        android:onClick="buscarPersonagem"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Resultado aparecerá aqui"
+        android:paddingTop="30dp"/>
+
+</LinearLayout>

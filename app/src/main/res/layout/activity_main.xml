@@ -1,0 +1,54 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="40dp"
+        android:text="Harry Potter API"
+        android:textColor="@android:color/black"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnCharacterId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:onClick="listarpersonagem"
+        android:text="Buscar um personagem"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnProfessors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:onClick="listarprofessor"
+        android:text="Listar Professores"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnStudents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:onClick="listarestudante"
+        android:text="Listar Estudantes por Casa"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnsair"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:onClick="sair"
+        android:text="Sair"
+        android:textSize="18sp" />
+
+</LinearLayout>
