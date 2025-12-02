@@ -1,12 +1,9 @@
-package br.ufpr.hp_trabalho.data.api
+    package br.ufpr.hp_trabalho.data.api
 
-import br.ufpr.hp_trabalho.data.model.Professor
-import retrofit2.http.GET
+    import br.ufpr.hp_trabalho.data.model.Professor
+    import retrofit2.http.GET
+        interface ProfessorAPI {
 
-class ProfessorAPI {
-    interface HPApi {
-
-        @GET("api/characters/staff")
-        suspend fun getProfessores(): List<Professor>
-    }
-}
+            @GET("api/characters/staff")
+            suspend fun getProfessores(): List<Professor>
+        }

@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun listarprofessor(view: View){
-
+        val intent = Intent(this, Professor::class.java)
+        startActivity(intent)
     }
 
     fun listarestudante(view: View){

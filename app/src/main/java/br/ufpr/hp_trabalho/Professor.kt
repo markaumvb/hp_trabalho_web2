@@ -4,11 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import br.ufpr.hp_trabalho.data.api.ProfessorAPI
 import kotlinx.coroutines.Dispatchers
@@ -23,10 +19,8 @@ class Professor : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar
     private lateinit var api: ProfessorAPI
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_professor)
 
         tvResult = findViewById(R.id.tvResult)
@@ -39,25 +33,33 @@ class Professor : AppCompatActivity() {
 
         api = retrofit.create(ProfessorAPI::class.java)
     }
+
     fun listarProfessores(view: View) {
-
         progressBar.visibility = ProgressBar.VISIBLE
+        tvResult.text = "Carregando professores..."
 
-        lifecycleScope.launch (Dispatchers.Main) {
+        lifecycleScope.launch(Dispatchers.Main) {
             try {
-                val response = withContext(Dispatchers.IO) {
-                    api.???
+                val professores = withContext(Dispatchers.IO) {
+                    api.getProfessores()
                 }
 
                 progressBar.visibility = ProgressBar.GONE
 
-
+                if (professores.isNotEmpty()) {
+                    var lista = ""
+                    for (professor in professores) {
+                        lista += "${professor.name}\n"
+                    }
+                    tvResult.text = lista
+                } else {
+                    tvResult.text = "Nenhum professor encontrado"
+                }
 
             } catch (e: Exception) {
                 progressBar.visibility = ProgressBar.GONE
-                tvResult.text = "Erro ao buscar professor."
+                tvResult.text = "Erro ao buscar professores: ${e.message}"
             }
         }
-    }
     }
 }
