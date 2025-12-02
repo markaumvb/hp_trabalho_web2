@@ -36,7 +36,6 @@ class Professor : AppCompatActivity() {
 
     fun listarProfessores(view: View) {
         progressBar.visibility = ProgressBar.VISIBLE
-        tvResult.text = "Carregando professores..."
 
         lifecycleScope.launch(Dispatchers.Main) {
             try {

@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun listarestudante(view: View){
-
+        val intent = Intent(this, PersonagemCasa::class.java)
+        startActivity(intent)
     }
 }

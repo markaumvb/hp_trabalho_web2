@@ -1,0 +1,85 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estudantes por Casa"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:paddingTop="30dp"
+        android:paddingBottom="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Escolha uma casa:"
+        android:textSize="18sp"
+        android:paddingBottom="10dp"/>
+
+    <RadioGroup
+        android:id="@+id/rgCasas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/rbGryffindor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="gryffindor"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rbSlytherin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="slytherin"/>
+
+        <RadioButton
+            android:id="@+id/rbHufflepuff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hufflepuff"/>
+
+        <RadioButton
+            android:id="@+id/rbRavenclaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ravenclaw"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listar Estudantes"
+        android:onClick="listarEstudantes"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="16dp">
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="Selecione uma casa e clique no botão"
+            android:paddingTop="16dp"/>
+
+    </ScrollView>
+
+</LinearLayout>
