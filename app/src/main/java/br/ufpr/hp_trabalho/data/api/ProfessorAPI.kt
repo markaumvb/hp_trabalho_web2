@@ -7,6 +7,6 @@ class ProfessorAPI {
     interface HPApi {
 
         @GET("api/characters/staff")
-        suspend fun getStaff(): List<Professor>
+        suspend fun getProfessores(): List<Professor>
     }
 }

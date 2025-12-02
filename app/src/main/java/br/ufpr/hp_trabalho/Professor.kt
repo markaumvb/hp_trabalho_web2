@@ -4,11 +4,16 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import br.ufpr.hp_trabalho.data.api.ProfessorAPI
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -36,8 +41,23 @@ class Professor : AppCompatActivity() {
     }
     fun listarProfessores(view: View) {
 
-        //loading
-        //buscar
-        //resutlados positivos e negativos
+        progressBar.visibility = ProgressBar.VISIBLE
+
+        lifecycleScope.launch (Dispatchers.Main) {
+            try {
+                val response = withContext(Dispatchers.IO) {
+                    api.???
+                }
+
+                progressBar.visibility = ProgressBar.GONE
+
+
+
+            } catch (e: Exception) {
+                progressBar.visibility = ProgressBar.GONE
+                tvResult.text = "Erro ao buscar professor."
+            }
+        }
+    }
     }
 }
