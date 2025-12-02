@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HP_Trabalho">
         <activity
+            android:name=".Professor"
+            android:exported="false" />
+        <activity
             android:name=".Personagem_Id"
             android:exported="false" />
         <activity
