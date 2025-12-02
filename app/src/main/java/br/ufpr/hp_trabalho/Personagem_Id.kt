@@ -73,7 +73,7 @@ class Personagem_Id : AppCompatActivity() {
 
             } catch (e: Exception) {
                 progressBar.visibility = ProgressBar.GONE
-                tvResult.text = "Erro ao buscar personagem."
+                tvResult.text = "Erro ao buscar personagem : ${e.message}"
             }
         }
     }
